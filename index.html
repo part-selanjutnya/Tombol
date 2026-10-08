@@ -57,15 +57,13 @@
     <button class="btn-raksasa" id="btnSuara">PENCET</button>
 
 <script>
-    // MASUKKAN LINK MP3 YANG SUDAH DISALIN DI SINI
-    // Pastikan link berada di dalam tanda kutip "..." dan diakhiri tanda koma , 
+    // 1. DATABASE LINK SUARA DARI MYINSTANTS
     const daftarSuara = [
-        // Ini contoh jika Anda sudah menyalin link dari tombol "Download MP3" suara Jokowi
-        "https://www.myinstants.com/media/sounds/jokowi-saya-akan-lawan.mp3", 
+        // Link MP3 Langsung dari Myinstants
+        "https://www.myinstants.com/media/sounds/jokowi-saya-akan-lawan.mp3"
         
-        // Anda bisa menambahkan link suara lain di bawahnya:
-        "https://www.myinstants.com/media/sounds/vine-boom.mp3",
-        "https://www.myinstants.com/media/sounds/sad-trombone.mp3"
+        // Jika Anda ingin menambahkan suara lain, taruh koma di atas, lalu tambahkan link baru di bawah ini.
+        // Contoh: "https://www.myinstants.com/media/sounds/vine-boom.mp3"
     ];
 
     const btnSuara = document.getElementById('btnSuara');
@@ -74,7 +72,7 @@
         const indeksSuaraAcak = Math.floor(Math.random() * daftarSuara.length);
         const suaraTerpilih = daftarSuara[indeksSuaraAcak];
 
-        // Memutar suara dari link internet
+        // Memutar suara
         const audio = new Audio(suaraTerpilih);
         audio.play();
     });
