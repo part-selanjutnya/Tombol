@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tombol Misteri</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #121212; 
+            margin: 0; 
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        .judul {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn-raksasa {
+            background-color: #ff3b30; 
+            color: white;
+            border: none;
+            border-radius: 50%; 
+            width: 250px; 
+            height: 250px;
+            font-size: 36px;
+            font-weight: 900;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 15px 0 #b3241d, 0 25px 20px rgba(0,0,0,0.5);
+            transition: all 0.1s ease-in-out;
+            -webkit-tap-highlight-color: transparent; 
+        }
+
+        .btn-raksasa:active {
+            transform: translateY(15px);
+            box-shadow: 0 0px 0 #b3241d, 0 5px 10px rgba(0,0,0,0.5);
+            background-color: #e6352b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="judul">TOMBOL MISTERI</div>
+
+    <!-- Tombol Utama -->
+    <button class="btn-raksasa" id="btnSuara">PENCET</button>
+
+<script>
+    // MASUKKAN LINK MP3 YANG SUDAH DISALIN DI SINI
+    // Pastikan link berada di dalam tanda kutip "..." dan diakhiri tanda koma , 
+    const daftarSuara = [
+        // Ini contoh jika Anda sudah menyalin link dari tombol "Download MP3" suara Jokowi
+        "https://www.myinstants.com/media/sounds/jokowi-saya-akan-lawan.mp3", 
+        
+        // Anda bisa menambahkan link suara lain di bawahnya:
+        "https://www.myinstants.com/media/sounds/vine-boom.mp3",
+        "https://www.myinstants.com/media/sounds/sad-trombone.mp3"
+    ];
+
+    const btnSuara = document.getElementById('btnSuara');
+
+    btnSuara.addEventListener('click', function() {
+        const indeksSuaraAcak = Math.floor(Math.random() * daftarSuara.length);
+        const suaraTerpilih = daftarSuara[indeksSuaraAcak];
+
+        // Memutar suara dari link internet
+        const audio = new Audio(suaraTerpilih);
+        audio.play();
+    });
+</script>
+
+</body>
+</html>
